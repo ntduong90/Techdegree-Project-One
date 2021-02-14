@@ -64,7 +64,7 @@ function randomBackgroundColor() {
 
 document.body.style.background = randomRGB;
 }
-randomBackgroundColor();
+
 
 
 //printQuote function returns html string to be printed on the web page. The html string contains the quote and source. If statements
