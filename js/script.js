@@ -50,10 +50,26 @@ function getRandomQuote() {
   return quotes[randomNum];
 }
 
+//random background color function which allows the background of the page to update with a random color
+//whenever user presses the button for a new quote.
+//Referenced https://www.w3resource.com/javascript-exercises/javascript-math-exercise-40.php for help with rgb and set up.
+//1. should create math function randomizer in respect to background color
+//2. if a click is registered, refresh new background color
+function randomBackgroundColor() {
+  let randomX = Math.floor(Math.random() * 256);
+  let randomY = Math.floor(Math.random() * 256);
+  let randomZ = Math.floor(Math.random() * 256);
+  let randomRGB = `rgb(${randomX} , ${randomY}, ${randomZ})`;
+
+
+document.body.style.background = randomRGB;
+}
+randomBackgroundColor();
 
 
 //printQuote function returns html string to be printed on the web page. The html string contains the quote and source. If statements
 //sets conditions in which citation and year are to be displayed. 
+//Added randomBackgroundColor() function call to bottom of printQuote function to piggy back on button press refresh.
 function printQuote() {
   let randomQuote = getRandomQuote();  
   let html =  `<p class="quote">${randomQuote.quote}</p>
@@ -73,10 +89,10 @@ function printQuote() {
 
               html += `</p>`;
            
-document.getElementById('quote-box').innerHTML = html;  
+document.getElementById('quote-box').innerHTML = html;
+randomBackgroundColor();  
 return html;
 }
-
 
 
 
