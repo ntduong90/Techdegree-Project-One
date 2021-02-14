@@ -88,12 +88,15 @@ function printQuote() {
               }
 
               html += `</p>`;
-           
+             
 document.getElementById('quote-box').innerHTML = html;
 randomBackgroundColor();  
 return html;
 }
 
+//time interval method that refreshes a new quote every 10 seconds
+//referenced https://www.w3schools.com/js/js_timing.asp for set interval method
+let quoteTimer = setInterval(printQuote, 10000);
 
 
 /***
