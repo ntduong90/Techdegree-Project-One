@@ -8,7 +8,8 @@ const quotes = [
   {
     quote: 'Leadership requires belief in the mission and unyielding perserverance to achieve victory.',
     source: 'Jocko Willink',
-    citation: 'Extreme Ownership: How U.S. Navy SEALs Lead and Win'
+    citation: 'Extreme Ownership: How U.S. Navy SEALs Lead and Win',
+    tag: 'Leadership'
   },
   {
     quote: 'Hesitation is the enemy. It allows the moment to pass, the opportunity to be lost, the enemy to get the upper hand.',
@@ -18,7 +19,8 @@ const quotes = [
     quote: 'If you know the way broadly, you will see it in everything.',
     source: 'Miyamoto Musashi',
     citation: 'The Book of Five Rings',
-    year: 1643
+    year: 1643,
+    tag: 'Philosophy'
   },
   {
     quote: 'Who\'s gonna carry the boats?!',
@@ -27,12 +29,14 @@ const quotes = [
   {
     quote: 'Jiu Jitsu is not about defeating and submitting your opponent. It\'s about defeating your mind when it\'s  screaming: "I QUIT."',
     source: 'Nhan Duong',
-    year: 2020
+    year: 2020,
+    tag: 'BJJ'  
   },
   {
     quote: 'If you want to change the world, start off by making your bed.',
     source: 'Admiral William H. McRaven',
-    year: 2014
+    year: 2014,
+    tag: 'Motivation'
   }
 ];
 
@@ -61,6 +65,10 @@ function printQuote() {
 
               if (randomQuote.year !== undefined) {
                 html += '<span class="year">' + randomQuote.year + '</span>';
+              }
+
+              if (randomQuote.tag !== undefined) {
+                html += '<span class="tag">, ' + randomQuote.tag + '</span>';
               }
 
               html += `</p>`;
